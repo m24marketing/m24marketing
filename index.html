@@ -3,14 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M24 Marketing</title>
+    <title>M24 Marketing - التسويق الذكي</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f8f9fa; }
-        h1 { color: #007bff; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .language-switch {
+            margin: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <h1>مرحبًا بك في M24 Marketing</h1>
-    <p>هذه صفحة تجريبية لعرض الموقع الخاص بالتسويق بالذكاء الصناعي.</p>
+
+    <!-- أزرار تغيير اللغة -->
+    <div class="language-switch">
+        <button onclick="showArabic()">🇸🇦 العربية</button>
+        <button onclick="showEnglish()">🇬🇧 English</button>
+    </div>
+
+    <!-- المحتوى باللغة العربية -->
+    <div id="arabic">
+        <h1>مرحبًا بك في M24 Marketing</h1>
+        <p>هذا موقع متخصص في التسويق بالذكاء الاصطناعي.</p>
+    </div>
+
+    <!-- المحتوى باللغة الإنجليزية -->
+    <div id="english" class="hidden">
+        <h1>Welcome to M24 Marketing</h1>
+        <p>This is a website specialized in AI-powered marketing.</p>
+    </div>
+
+    <script>
+        function showArabic() {
+            document.getElementById("arabic").classList.remove("hidden");
+            document.getElementById("english").classList.add("hidden");
+        }
+
+        function showEnglish() {
+            document.getElementById("english").classList.remove("hidden");
+            document.getElementById("arabic").classList.add("hidden");
+        }
+    </script>
+
 </body>
 </html>
