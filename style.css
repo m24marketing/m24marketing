@@ -1,3 +1,4 @@
+/* إعدادات عامة */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -6,39 +7,55 @@ body {
     padding: 0;
 }
 
+/* الهيدر */
 header {
     background: #007bff;
     color: white;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 h1 span {
     color: #ffcc00;
 }
 
+/* الأقسام */
 section {
     margin: 20px;
     padding: 20px;
     background: white;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* الأزرار */
 .btn, .btn-whatsapp {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
     background: #28a745;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
+    transition: background 0.3s ease-in-out;
 }
 
+.btn:hover, .btn-whatsapp:hover {
+    background: #218838;
+}
+
+/* الفوتر */
 footer {
     margin-top: 20px;
     padding: 10px;
     background: #333;
     color: white;
+    text-align: center;
 }
+
+/* نموذج الطلب */
 #request-service {
     background: #fff;
     padding: 20px;
@@ -56,16 +73,25 @@ footer {
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 16px;
 }
 
 #request-service button {
     background: #28a745;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
 }
+
+#request-service button:hover {
+    background: #218838;
+}
+
+/* تسعير الخدمات */
 #pricing {
     background: #f4f4f4;
     padding: 20px;
@@ -76,6 +102,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .pricing-box {
@@ -84,7 +111,15 @@ footer {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
+
+.pricing-box:hover {
+    transform: scale(1.05);
+}
+
+/* قسم تقييمات العملاء */
 #testimonials {
     text-align: center;
     padding: 20px;
@@ -96,10 +131,43 @@ footer {
     margin: 10px auto;
     width: 60%;
     border-left: 5px solid #007bff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+/* صفحة "من نحن" */
 #about {
     text-align: center;
     background: white;
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* قائمة التنقل */
+nav {
+    background: #333;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
 }
