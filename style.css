@@ -52,6 +52,35 @@ section:hover {
     transform: scale(1.05);
 }
 
+/* قائمة التنقل */
+nav {
+    background: #333;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
 /* الفوتر */
 footer {
     margin-top: 20px;
@@ -93,28 +122,11 @@ footer {
     transition: background 0.3s ease-in-out, transform 0.2s;
 }
 
-#req
-/* تنسيق قسم الأسئلة الشائعة */
-#faq {
-    background: #f8f9fa;
-    padding: 20px;
-    text-align: center;
+#request-service button:hover {
+    background: #218838;
 }
 
-.faq-item {
-    background: white;
-    padding: 15px;
-    margin: 10px auto;
-    width: 80%;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: right;
-}
-
-.faq-item h3 {
-    color: #007bff;
-}
-/* تنسيق قسم المدونة */
+/* تحسينات المدونة */
 #blog {
     background: #f8f9fa;
     padding: 20px;
@@ -123,16 +135,28 @@ footer {
 
 .blog-post {
     background: white;
-    padding: 15px;
+    padding: 20px;
     margin: 15px auto;
     width: 80%;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     text-align: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-post:hover {
+    transform: scale(1.03);
 }
 
 .blog-post h3 {
     color: #007bff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    font-size: 16px;
+    color: #444;
 }
 
 .blog-post a {
@@ -146,34 +170,31 @@ footer {
 .blog-post a:hover {
     text-decoration: underline;
 }
-/* تنسيق صفحة الأسئلة الشائعة */
-#faq {
-    background: #f8f9fa;
-    padding: 20px;
-    text-align: center;
+
+/* تحسينات الصفحة الرئيسية */
+#services, #pricing, #testimonials {
+    width: 90%;
+    margin: auto;
 }
 
-.faq-item {
-    background: white;
-    padding: 15px;
-    margin: 15px auto;
-    width: 80%;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: right;
-}
+/* تحسينات الهواتف المحمولة */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 
-.faq-item h3 {
-    color: #007bff;
-    cursor: pointer;
-}
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.faq-item p {
-    display: none;
-    padding-top: 10px;
-    color: #333;
-}
+    .pricing-box {
+        width: 90%;
+        margin-bottom: 15px;
+    }
 
-.faq-item:hover p {
-    display: block;
+    .blog-post {
+        width: 90%;
+    }
 }
