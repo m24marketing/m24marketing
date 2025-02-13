@@ -26,6 +26,11 @@ section {
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: scale(1.02);
 }
 
 /* الأزرار */
@@ -39,11 +44,12 @@ section {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, transform 0.2s;
 }
 
 .btn:hover, .btn-whatsapp:hover {
     background: #218838;
+    transform: scale(1.05);
 }
 
 /* الفوتر */
@@ -84,90 +90,7 @@ footer {
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, transform 0.2s;
 }
 
-#request-service button:hover {
-    background: #218838;
-}
-
-/* تسعير الخدمات */
-#pricing {
-    background: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-}
-
-.pricing-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.pricing-box {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 250px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.pricing-box:hover {
-    transform: scale(1.05);
-}
-
-/* قسم تقييمات العملاء */
-#testimonials {
-    text-align: center;
-    padding: 20px;
-}
-
-.testimonial {
-    background: white;
-    padding: 15px;
-    margin: 10px auto;
-    width: 60%;
-    border-left: 5px solid #007bff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* صفحة "من نحن" */
-#about {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* قائمة التنقل */
-nav {
-    background: #333;
-    padding: 15px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-}
+#req
