@@ -146,3 +146,34 @@ footer {
 .blog-post a:hover {
     text-decoration: underline;
 }
+/* تنسيق صفحة الأسئلة الشائعة */
+#faq {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}
+
+.faq-item {
+    background: white;
+    padding: 15px;
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: right;
+}
+
+.faq-item h3 {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.faq-item p {
+    display: none;
+    padding-top: 10px;
+    color: #333;
+}
+
+.faq-item:hover p {
+    display: block;
+}
