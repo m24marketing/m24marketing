@@ -198,3 +198,47 @@ footer {
         width: 90%;
     }
 }
+/* تحسينات المدونة */
+#blog {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}
+
+.blog-post {
+    background: white;
+    padding: 20px;
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    text-align: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-post:hover {
+    transform: scale(1.03);
+}
+
+.blog-post h3 {
+    color: #007bff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    font-size: 16px;
+    color: #444;
+}
+
+.blog-post a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
