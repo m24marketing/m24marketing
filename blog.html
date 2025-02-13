@@ -22,42 +22,25 @@
         </nav>
     </header>
 
-    <!-- شريط البحث -->
-    <section id="search-bar">
-        <input type="text" id="searchInput" placeholder="🔍 ابحث في المدونة..." onkeyup="searchBlog()">
-    </section>
-
-    <!-- تصنيف المقالات -->
-    <section id="categories">
-        <button class="category-btn" onclick="filterCategory('all')">📚 الكل</button>
-        <button class="category-btn" onclick="filterCategory('seo')">🔍 تحسين محركات البحث</button>
-        <button class="category-btn" onclick="filterCategory('ads')">🎯 الإعلانات الرقمية</button>
-        <button class="category-btn" onclick="filterCategory('ai')">🤖 الذكاء الاصطناعي</button>
-    </section>
-
-    <!-- قائمة المقالات -->
     <section id="blog">
         <h2>📝 أحدث المقالات</h2>
 
-        <div class="blog-post" data-category="ai">
-            <img src="images/ai-marketing.jpg" alt="الذكاء الاصطناعي في التسويق">
+        <div class="blog-post">
             <h3>🚀 كيف يمكن للذكاء الاصطناعي تحسين حملات التسويق؟</h3>
             <p>تعرف على كيفية استخدام البيانات الضخمة وتقنيات الذكاء الاصطناعي لتحسين إعلاناتك...</p>
-            <a href="blog-post.html">اقرأ المزيد</a>
+            <a href="post-ai-marketing.html">اقرأ المزيد</a>
         </div>
 
-        <div class="blog-post" data-category="seo">
-            <img src="images/seo-strategies.jpg" alt="تحسين محركات البحث">
+        <div class="blog-post">
             <h3>📈 أفضل استراتيجيات SEO لزيادة ظهور موقعك</h3>
             <p>نصائح فعالة لتحسين ترتيب موقعك في نتائج البحث وزيادة عدد الزوار...</p>
-            <a href="seo-strategies.html">اقرأ المزيد</a>
+            <a href="post-seo-strategies.html">اقرأ المزيد</a>
         </div>
 
-        <div class="blog-post" data-category="ads">
-            <img src="images/targeting-ads.jpg" alt="استهداف الجمهور">
+        <div class="blog-post">
             <h3>🎯 كيف تستهدف الجمهور المناسب على TikTok و Google Ads؟</h3>
             <p>تعرف على أهم الأدوات لاستهداف الفئة المثالية لتحقيق أعلى العوائد الإعلانية...</p>
-            <a href="targeting-tips.html">اقرأ المزيد</a>
+            <a href="post-tiktok-google-ads.html">اقرأ المزيد</a>
         </div>
 
     </section>
@@ -65,34 +48,6 @@
     <footer>
         <p>© 2025 جميع الحقوق محفوظة - M24 Marketing</p>
     </footer>
-
-    <script>
-        // فلترة المقالات حسب الفئة
-        function filterCategory(category) {
-            let posts = document.querySelectorAll('.blog-post');
-            posts.forEach(post => {
-                if (category === 'all' || post.getAttribute('data-category') === category) {
-                    post.style.display = 'block';
-                } else {
-                    post.style.display = 'none';
-                }
-            });
-        }
-
-        // البحث في المدونة
-        function searchBlog() {
-            let input = document.getElementById("searchInput").value.toLowerCase();
-            let posts = document.querySelectorAll('.blog-post');
-            posts.forEach(post => {
-                let title = post.querySelector("h3").innerText.toLowerCase();
-                if (title.includes(input)) {
-                    post.style.display = "block";
-                } else {
-                    post.style.display = "none";
-                }
-            });
-        }
-    </script>
 
 </body>
 </html>
