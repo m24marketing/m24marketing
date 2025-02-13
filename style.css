@@ -198,47 +198,51 @@ footer {
         width: 90%;
     }
 }
-/* تحسينات المدونة */
-#blog {
+
+/* تحسينات قائمة الأسئلة الشائعة */
+#faq {
     background: #f8f9fa;
     padding: 20px;
     text-align: center;
 }
 
-.blog-post {
+.faq-item {
     background: white;
-    padding: 20px;
+    padding: 15px;
     margin: 15px auto;
     width: 80%;
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: right;
-    transition: transform 0.3s ease-in-out;
 }
 
-.blog-post:hover {
-    transform: scale(1.03);
-}
-
-.blog-post h3 {
+.faq-item h3 {
     color: #007bff;
-    font-size: 20px;
-    margin-bottom: 10px;
+    cursor: pointer;
 }
 
-.blog-post p {
-    font-size: 16px;
-    color: #444;
+.faq-item p {
+    display: none;
+    padding-top: 10px;
+    color: #333;
 }
 
-.blog-post a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #28a745;
-    text-decoration: none;
-    font-weight: bold;
+.faq-item:hover p {
+    display: block;
 }
 
-.blog-post a:hover {
-    text-decoration: underline;
+/* تأثيرات التفاعل مع الصفحة */
+section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
