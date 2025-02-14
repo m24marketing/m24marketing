@@ -1,71 +1,79 @@
-/* تحسين رأس الصفحة ليكون متجاوبًا */
+/* إعدادات عامة */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* الوضع الليلي */
+body.dark-mode {
+    background: #222;
+    color: #fff;
+}
+
 header {
     background: #007bff;
     color: white;
-    padding: 15px;
-    text-align: center;
-    position: relative; /* السماح له بالحركة عند التمرير */
-    width: 100%;
-    height: auto;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-h1 {
-    font-size: 26px;
-    margin: 0;
-    padding: 10px 0;
+    transition: background 0.3s ease-in-out;
 }
 
 h1 span {
     color: #ffcc00;
 }
 
-/* تحسين قائمة التنقل */
-nav {
-    background: #333;
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
+/* تحسينات التأثيرات */
+section {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+section:hover {
+    transform: scale(1.02);
 }
 
-nav ul li {
-    margin: 5px 15px;
-}
-
-nav ul li a {
+/* زر الرجوع إلى الأعلى */
+#scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
     color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s ease-in-out;
 }
 
-nav ul li a:hover {
-    color: #ffcc00;
+#scrollTop:hover {
+    background: #0056b3;
 }
 
-/* تحسينات الجوال */
+/* زر الوضع الليلي */
+#toggleDarkMode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ffcc00;
+    color: #222;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* تحسين التوافق مع الجوال */
 @media (max-width: 768px) {
-    header {
-        padding: 10px;
-        height: auto; /* إزالة أي ارتفاع ثابت */
-        position: relative; /* السماح بالحركة مع التمرير */
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
     nav ul {
-        flex-direction: column; /* تحويل القائمة إلى عمودية */
+        flex-direction: column;
         align-items: center;
     }
 
@@ -74,8 +82,27 @@ nav ul li a:hover {
         margin: 10px 0;
     }
 
-    .btn, .btn-whatsapp {
-        font-size: 14px;
-        padding: 10px 20px;
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
     }
+
+    .pricing-box {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .blog-post {
+        width: 90%;
+    }
+}
+
+/* تحسين تجربة المستخدم عبر التأثيرات */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeIn 1s ease-in-out;
 }
