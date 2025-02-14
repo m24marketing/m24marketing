@@ -5,72 +5,128 @@ body {
     background: #f4f4f4;
     margin: 0;
     padding: 0;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* الوضع الليلي */
 body.dark-mode {
-    background: #222;
-    color: #fff;
+    background: #121212;
+    color: #ffffff;
 }
 
+header.dark-mode, footer.dark-mode, nav.dark-mode {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+.btn.dark-mode, .btn-whatsapp.dark-mode {
+    background: #007bff;
+    color: white;
+}
+
+/* الهيدر */
 header {
     background: #007bff;
     color: white;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: background 0.3s ease-in-out;
 }
 
 h1 span {
     color: #ffcc00;
 }
 
-/* تحسينات التأثيرات */
+/* الأقسام */
 section {
     margin: 20px;
     padding: 20px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+body.dark-mode section {
+    background: #222;
+    color: #fff;
 }
 
 section:hover {
     transform: scale(1.02);
 }
 
-/* زر الرجوع إلى الأعلى */
-#scrollTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #007bff;
+/* الأزرار */
+.btn, .btn-whatsapp {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #28a745;
     color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.btn:hover, .btn-whatsapp:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* قائمة التنقل */
+nav {
+    background: #333;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+body.dark-mode nav {
+    background: #1e1e1e;
+}
+
+body.dark-mode nav ul li a {
+    color: #fff;
+}
+
+/* الفوتر */
+footer {
+    margin-top: 20px;
     padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    transition: opacity 0.3s ease-in-out;
+    background: #333;
+    color: white;
+    text-align: center;
 }
 
-#scrollTop:hover {
-    background: #0056b3;
+body.dark-mode footer {
+    background: #1e1e1e;
+    color: #ffffff;
 }
 
-/* زر الوضع الليلي */
-#toggleDarkMode {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #ffcc00;
-    color: #222;
-    padding: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-/* تحسين التوافق مع الجوال */
+/* تحسينات الهواتف المحمولة */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -95,14 +151,4 @@ section:hover {
     .blog-post {
         width: 90%;
     }
-}
-
-/* تحسين تجربة المستخدم عبر التأثيرات */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-section {
-    animation: fadeIn 1s ease-in-out;
 }
