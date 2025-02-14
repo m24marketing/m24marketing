@@ -24,46 +24,20 @@ body.dark-mode section {
     color: #ffffff;
 }
 
-header.dark-mode, footer.dark-mode, nav.dark-mode {
-    background: #1e1e1e;
-}
-
-/* 🌟 زر الوضع الليلي */
-.toggle-theme {
-    position: fixed;
-    top: 10px;
-    right: 15px;
-    background: #ffcc00;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.toggle-theme:hover {
-    background: #e6b800;
-}
-
-/* 🎯 الرأس */
-header {
+header, footer, nav {
     background: #007bff;
     color: white;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-h1 span {
-    color: #ffcc00;
+body.dark-mode header, body.dark-mode footer, body.dark-mode nav {
+    background: #1e1e1e;
 }
 
 /* 📌 قائمة التنقل */
 nav {
-    background: #333;
-    padding: 15px 0;
     text-align: center;
+    padding: 15px 0;
 }
 
 nav ul {
@@ -102,8 +76,32 @@ section {
     transition: transform 0.3s ease-in-out;
 }
 
+body.dark-mode section {
+    background: #222;
+    color: white;
+}
+
 section:hover {
     transform: scale(1.02);
+}
+
+/* 🌟 زر الوضع الليلي */
+.toggle-theme {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    background: #ffcc00;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.toggle-theme:hover {
+    background: #e6b800;
 }
 
 /* 📩 نموذج الطلب */
@@ -141,6 +139,11 @@ section:hover {
     border-radius: 8px;
     width: 80%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .testimonial {
+    background: #333;
+    color: white;
 }
 
 /* 🔹 الأزرار */
@@ -203,6 +206,23 @@ footer a {
 }
 
 footer a:hover {
+    text-decoration: underline;
+}
+
+/* 📜 سياسة الخصوصية والشروط */
+.footer-links {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
     text-decoration: underline;
 }
 
