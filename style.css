@@ -30,7 +30,9 @@ header, footer, nav {
     padding: 20px;
 }
 
-body.dark-mode header, body.dark-mode footer, body.dark-mode nav {
+body.dark-mode header, 
+body.dark-mode footer, 
+body.dark-mode nav {
     background: #1e1e1e;
 }
 
@@ -92,10 +94,8 @@ section:hover {
     right: 15px;
     background: #ffcc00;
     padding: 10px;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
     font-size: 16px;
     font-weight: bold;
 }
@@ -175,7 +175,6 @@ body.dark-mode .testimonial {
     border: none;
     padding: 12px;
     border-radius: 50%;
-    cursor: pointer;
     display: none;
     font-size: 18px;
     font-weight: bold;
@@ -183,6 +182,23 @@ body.dark-mode .testimonial {
 
 #scrollTop:hover {
     background: #0056b3;
+}
+
+/* 📜 سياسة الخصوصية والشروط */
+.footer-links {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
 /* 🛑 الفوتر */
@@ -206,23 +222,6 @@ footer a {
 }
 
 footer a:hover {
-    text-decoration: underline;
-}
-
-/* 📜 سياسة الخصوصية والشروط */
-.footer-links {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.footer-links a {
-    margin: 0 10px;
-    color: #ffcc00;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.footer-links a:hover {
     text-decoration: underline;
 }
 
