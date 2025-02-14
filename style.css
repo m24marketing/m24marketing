@@ -14,26 +14,29 @@ body.dark-mode {
     color: #ffffff;
 }
 
-header.dark-mode, footer.dark-mode, nav.dark-mode {
+header.dark-mode {
     background: #1e1e1e;
-    color: #ffffff;
 }
 
-.btn.dark-mode, .btn-whatsapp.dark-mode {
-    background: #007bff;
-    color: white;
+footer.dark-mode {
+    background: #1e1e1e;
 }
 
-/* الهيدر */
-header {
-    background: #007bff;
-    color: white;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+/* زر الوضع الليلي */
+.toggle-theme {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ffcc00;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
-h1 span {
-    color: #ffcc00;
+.toggle-theme:hover {
+    background: #e6b800;
 }
 
 /* الأقسام */
@@ -43,7 +46,7 @@ section {
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 body.dark-mode section {
@@ -74,44 +77,6 @@ section:hover {
     transform: scale(1.05);
 }
 
-/* قائمة التنقل */
-nav {
-    background: #333;
-    padding: 15px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-}
-
-body.dark-mode nav {
-    background: #1e1e1e;
-}
-
-body.dark-mode nav ul li a {
-    color: #fff;
-}
-
 /* الفوتر */
 footer {
     margin-top: 20px;
@@ -119,11 +84,12 @@ footer {
     background: #333;
     color: white;
     text-align: center;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 body.dark-mode footer {
     background: #1e1e1e;
-    color: #ffffff;
+    color: #ddd;
 }
 
 /* تحسينات الهواتف المحمولة */
@@ -150,5 +116,50 @@ body.dark-mode footer {
 
     .blog-post {
         width: 90%;
+    }
+
+    /* ضبط الخطوط والتنسيقات */
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .btn, .btn-whatsapp {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* تحسينات قائمة الأسئلة الشائعة */
+.faq-item h3 {
+    cursor: pointer;
+}
+
+.faq-item p {
+    display: none;
+    padding-top: 10px;
+    color: #333;
+}
+
+.faq-item:hover p {
+    display: block;
+}
+
+/* تأثيرات التفاعل مع الصفحة */
+section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
