@@ -3,24 +3,47 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
     text-align: center;
     background: #f4f4f4;
     color: #333;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* 🌙 الوضع الليلي */
-.dark-mode {
-    background-color: #222;
-    color: white;
+body.dark-mode {
+    background: #121212;
+    color: #ffffff;
 }
 
-.dark-mode header, .dark-mode footer {
-    background-color: #111;
+body.dark-mode section {
+    background: #222;
+    color: #ffffff;
+}
+
+header.dark-mode, footer.dark-mode {
+    background: #1e1e1e;
+}
+
+/* 🌟 زر الوضع الليلي */
+.toggle-theme {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    background: #ffcc00;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    font-size: 14px;
+}
+
+.toggle-theme:hover {
+    background: #e6b800;
 }
 
 /* 🎯 الرأس */
@@ -35,7 +58,7 @@ h1 span {
     color: #ffcc00;
 }
 
-/* 🔹 قائمة التنقل */
+/* 📌 قائمة التنقل */
 nav {
     background: #333;
     padding: 15px 0;
@@ -67,35 +90,18 @@ nav ul li a:hover {
 
 /* 📦 الأقسام */
 section {
-    margin: 20px;
+    margin: 20px auto;
     padding: 20px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 800px;
     transition: transform 0.3s ease-in-out;
 }
 
 section:hover {
     transform: scale(1.02);
-}
-
-/* 🛠️ الأزرار */
-.btn, .btn-whatsapp {
-    display: inline-block;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    background: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background 0.3s ease-in-out, transform 0.2s;
-}
-
-.btn:hover, .btn-whatsapp:hover {
-    background: #218838;
-    transform: scale(1.05);
 }
 
 /* 📩 نموذج الطلب */
@@ -144,6 +150,25 @@ section:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* 🔹 الأزرار */
+.btn, .btn-whatsapp {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.btn:hover, .btn-whatsapp:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
 /* 📌 زر الرجوع للأعلى */
 #scrollTop {
     position: fixed;
@@ -160,24 +185,6 @@ section:hover {
 
 #scrollTop:hover {
     background: #0056b3;
-}
-
-/* 📌 زر الوضع الليلي */
-#toggleDarkMode {
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    background: #ffcc00;
-    color: black;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-#toggleDarkMode:hover {
-    background: #ffb300;
 }
 
 /* 🎯 تحسينات الهواتف المحمولة */
