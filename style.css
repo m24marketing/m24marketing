@@ -13,27 +13,28 @@ body {
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* 🌙 الوضع الليلي */
+/* إعدادات الوضع الليلي */
 body.dark-mode {
     background: #121212;
     color: #ffffff;
 }
 
-body.dark-mode section {
-    background: #222;
-    color: #ffffff;
+/* تصحيح لون النصوص عند تفعيل الوضع الليلي */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode p, 
+body.dark-mode a {
+    color: #ffffff !important;
 }
 
-header, footer, nav {
-    background: #007bff;
-    color: white;
-    padding: 20px;
+/* تصحيح لون الروابط عند تفعيل الوضع الليلي */
+body.dark-mode a {
+    color: #ffcc00 !important;
 }
 
-body.dark-mode header, 
-body.dark-mode footer, 
-body.dark-mode nav {
-    background: #1e1e1e;
+body.dark-mode a:hover {
+    color: #e6b800 !important;
 }
 
 /* 📌 قائمة التنقل */
