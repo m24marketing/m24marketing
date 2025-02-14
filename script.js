@@ -16,3 +16,15 @@ window.onscroll = function() {
 document.getElementById("scrollTop").addEventListener("click", function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("api.php", {  // استبدل بـ "http://localhost:3000/api" إذا كنت تستخدم Node.js
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ request: "تحديث الموقع" })
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("ai-content").innerHTML = data.ai_response;
+    })
+    .catch(error => console.error("Error fetching AI data:", error));
+});
