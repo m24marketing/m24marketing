@@ -36,23 +36,3 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch(error => console.error("خطأ في جلب بيانات الذكاء الصناعي:", error));
 });
-
-// نموذج التفاعل الذكي مع المستخدم
-document.getElementById("chat-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-    let userMessage = document.getElementById("chat-input").value;
-    document.getElementById("chat-input").value = "";
-
-    fetch("api.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage })
-    })
-    .then(response => response.json())
-    .then(data => {
-        let chatBox = document.getElementById("chat-box");
-        chatBox.innerHTML += `<p><strong>أنت:</strong> ${userMessage}</p>`;
-        chatBox.innerHTML += `<p><strong>AI:</strong> ${data.ai_response}</p>`;
-    })
-    .catch(error => console.error("خطأ في الرد الذكي:", error));
-});
