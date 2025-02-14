@@ -1,294 +1,72 @@
-/* ✅ إعدادات عامة */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    transition: background 0.3s ease-in-out;
-}
-
-/* ✅ الهيدر */
-header {
-    background: #007bff;
+/* الوضع الليلي */
+.dark-mode {
+    background-color: #222;
     color: white;
+}
+
+.dark-mode header {
+    background-color: #111;
+}
+
+.dark-mode footer {
+    background-color: #111;
+}
+
+/* تصميم الدردشة */
+#chat {
+    width: 60%;
+    margin: auto;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 span {
-    color: #ffcc00;
-}
-
-/* ✅ قائمة التنقل */
-nav {
-    background: #333;
+#chat-box {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
     padding: 10px;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-}
-
-/* ✅ تحسينات الأقسام */
-section {
-    margin: 20px;
-    padding: 20px;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-section:hover {
-    transform: scale(1.02);
-}
-
-/* ✅ الأزرار */
-.btn, .btn-whatsapp {
-    display: inline-block;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    background: #28a745;
-    color: white;
-    text-decoration: none;
     border-radius: 5px;
-    margin-top: 10px;
-    transition: background 0.3s ease-in-out, transform 0.2s;
+    margin-bottom: 10px;
 }
 
-.btn:hover, .btn-whatsapp:hover {
-    background: #218838;
-    transform: scale(1.05);
-}
-
-/* ✅ الفوتر */
-footer {
-    margin-top: 20px;
+#chat-input {
+    width: 80%;
     padding: 10px;
-    background: #333;
-    color: white;
-    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-/* ✅ زر الرجوع للأعلى */
-#scrollTop {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+#chat button {
     padding: 10px 15px;
-    font-size: 18px;
     background: #007bff;
     color: white;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#chat button:hover {
+    background: #0056b3;
+}
+
+/* زر الرجوع للأعلى */
+#scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: background 0.3s, transform 0.3s;
+    display: none;
 }
 
 #scrollTop:hover {
     background: #0056b3;
-    transform: scale(1.1);
-}
-
-/* ✅ زر الوضع الليلي */
-#toggleDarkMode {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 10px 15px;
-    font-size: 14px;
-    background: #ffcc00;
-    color: black;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-}
-
-#toggleDarkMode:hover {
-    background: #e6b800;
-    transform: scale(1.05);
-}
-
-/* ✅ تحسينات الوضع الليلي */
-.dark-mode {
-    background: #222;
-    color: #fff;
-}
-
-.dark-mode section {
-    background: #333;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode nav {
-    background: #111;
-}
-
-.dark-mode nav ul li a {
-    color: #ffcc00;
-}
-
-.dark-mode nav ul li a:hover {
-    color: #ffffff;
-}
-
-.dark-mode footer {
-    background: #111;
-}
-
-/* ✅ تحسينات نموذج الطلب */
-#request-service {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 80%;
-    margin: auto;
-}
-
-#request-service input, 
-#request-service select, 
-#request-service textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-#request-service button {
-    background: #28a745;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background 0.3s ease-in-out, transform 0.2s;
-}
-
-#request-service button:hover {
-    background: #218838;
-}
-
-/* ✅ تحسينات استجابة الموقع للجوال */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .pricing-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .pricing-box {
-        width: 90%;
-        margin-bottom: 15px;
-    }
-
-    .blog-post {
-        width: 90%;
-    }
-
-    /* ضبط الخطوط والتنسيقات */
-    body {
-        font-size: 14px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    .btn, .btn-whatsapp {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-}
-
-/* ✅ تحسينات قائمة الأسئلة الشائعة */
-#faq {
-    background: #f8f9fa;
-    padding: 20px;
-    text-align: center;
-}
-
-.faq-item {
-    background: white;
-    padding: 15px;
-    margin: 15px auto;
-    width: 80%;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: right;
-}
-
-.faq-item h3 {
-    color: #007bff;
-    cursor: pointer;
-}
-
-.faq-item p {
-    display: none;
-    padding-top: 10px;
-    color: #333;
-}
-
-.faq-item:hover p {
-    display: block;
-}
-
-/* ✅ تأثيرات التفاعل مع الصفحة */
-section {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
