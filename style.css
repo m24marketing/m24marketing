@@ -1,165 +1,40 @@
-/* إعدادات عامة */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
+// ✅ تفعيل الوضع الليلي
+document.getElementById("toggleDarkMode").addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+});
 
-/* الوضع الليلي */
-body.dark-mode {
-    background: #121212;
-    color: #ffffff;
-}
-
-header.dark-mode {
-    background: #1e1e1e;
-}
-
-footer.dark-mode {
-    background: #1e1e1e;
-}
-
-/* زر الوضع الليلي */
-.toggle-theme {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #ffcc00;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.toggle-theme:hover {
-    background: #e6b800;
-}
-
-/* الأقسام */
-section {
-    margin: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-body.dark-mode section {
-    background: #222;
-    color: #fff;
-}
-
-section:hover {
-    transform: scale(1.02);
-}
-
-/* الأزرار */
-.btn, .btn-whatsapp {
-    display: inline-block;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    background: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background 0.3s ease-in-out, transform 0.2s;
-}
-
-.btn:hover, .btn-whatsapp:hover {
-    background: #218838;
-    transform: scale(1.05);
-}
-
-/* الفوتر */
-footer {
-    margin-top: 20px;
-    padding: 10px;
-    background: #333;
-    color: white;
-    text-align: center;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-body.dark-mode footer {
-    background: #1e1e1e;
-    color: #ddd;
-}
-
-/* تحسينات الهواتف المحمولة */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+// ✅ استعادة الوضع الليلي عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", function() {
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
     }
+});
 
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+// ✅ زر الرجوع للأعلى
+window.onscroll = function() {
+    let scrollTopButton = document.getElementById("scrollTop");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollTopButton.style.display = "block";
+    } else {
+        scrollTopButton.style.display = "none";
     }
+};
 
-    .pricing-container {
-        flex-direction: column;
-        align-items: center;
-    }
+document.getElementById("scrollTop").addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-    .pricing-box {
-        width: 90%;
-        margin-bottom: 15px;
-    }
-
-    .blog-post {
-        width: 90%;
-    }
-
-    /* ضبط الخطوط والتنسيقات */
-    body {
-        font-size: 14px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    .btn, .btn-whatsapp {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-}
-
-/* تحسينات قائمة الأسئلة الشائعة */
-.faq-item h3 {
-    cursor: pointer;
-}
-
-.faq-item p {
-    display: none;
-    padding-top: 10px;
-    color: #333;
-}
-
-.faq-item:hover p {
-    display: block;
-}
-
-/* تأثيرات التفاعل مع الصفحة */
-section {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+// ✅ جلب تحديثات الذكاء الاصطناعي من API
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("api.php", { // استبدل بـ "http://localhost:3000/api" إذا كنت تستخدم Node.js
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ request: "تحديث الموقع" })
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("ai-content").innerHTML = data.ai_response;
+    })
+    .catch(error => console.error("❌ خطأ في جلب بيانات الذكاء الاصطناعي:", error));
+});
