@@ -1,59 +1,150 @@
-/* الوضع الليلي */
+/* 🌍 إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f4f4f4;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* 🌙 الوضع الليلي */
 .dark-mode {
     background-color: #222;
     color: white;
 }
 
-.dark-mode header {
+.dark-mode header, .dark-mode footer {
     background-color: #111;
 }
 
-.dark-mode footer {
-    background-color: #111;
-}
-
-/* تصميم الدردشة */
-#chat {
-    width: 60%;
-    margin: auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#chat-box {
-    height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background: white;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-#chat-input {
-    width: 80%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-#chat button {
-    padding: 10px 15px;
+/* 🎯 الرأس */
+header {
     background: #007bff;
     color: white;
-    border: none;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+h1 span {
+    color: #ffcc00;
+}
+
+/* 🔹 قائمة التنقل */
+nav {
+    background: #333;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* 📦 الأقسام */
+section {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: scale(1.02);
+}
+
+/* 🛠️ الأزرار */
+.btn, .btn-whatsapp {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
     border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.btn:hover, .btn-whatsapp:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* 📩 نموذج الطلب */
+#request-service {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+#request-service input, 
+#request-service select, 
+#request-service textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#request-service button {
+    background: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
     cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
 }
 
-#chat button:hover {
-    background: #0056b3;
+#request-service button:hover {
+    background: #218838;
 }
 
-/* زر الرجوع للأعلى */
+/* ⭐ تقييمات العملاء */
+.testimonial {
+    background: #f9f9f9;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 8px;
+    width: 80%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 📌 زر الرجوع للأعلى */
 #scrollTop {
     position: fixed;
     bottom: 20px;
@@ -69,4 +160,62 @@
 
 #scrollTop:hover {
     background: #0056b3;
+}
+
+/* 📌 زر الوضع الليلي */
+#toggleDarkMode {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background: #ffcc00;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#toggleDarkMode:hover {
+    background: #ffb300;
+}
+
+/* 🎯 تحسينات الهواتف المحمولة */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-box {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .blog-post {
+        width: 90%;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .btn, .btn-whatsapp {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }
