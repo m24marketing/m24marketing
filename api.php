@@ -1,15 +1,21 @@
 <?php
-header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-// استقبال البيانات من الذكاء الصناعي (كمثال، تحليل طلبات المستخدمين)
-$data = json_decode(file_get_contents("php://input"), true);
+$request = json_decode(file_get_contents("php://input"), true);
 
-$response = [
-    "status" => "success",
-    "message" => "تم استقبال البيانات بنجاح",
-    "ai_response" => "هذه استجابة الذكاء الصناعي للموقع."
-];
+if (isset($request["message"])) {
+    $userMessage = $request["message"];
+    
+    // الرد الذكي بناءً على السؤال
+    $responses = [
+        "ما هي خدماتكم؟" => "نحن نقدم خدمات التسويق بالذكاء الصناعي، تحسين SEO، وإدارة الحملات الإعلانية.",
+        "كيف يمكنني الاشتراك؟" => "يمكنك الاشتراك من خلال التواصل معنا عبر البريد الإلكتروني أو واتساب."
+    ];
 
-echo json_encode($response);
+    $aiResponse = $responses[$userMessage] ?? "عذرًا، لم أفهم سؤالك. يرجى توضيحه أكثر.";
+
+    echo json_encode(["ai_response" => $aiResponse]);
+} else {
+    echo json_encode(["ai_response" => "مرحبا! كيف يمكنني مساعدتك؟"]);
+}
 ?>
