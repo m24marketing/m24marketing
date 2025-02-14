@@ -1,97 +1,23 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M24 Marketing - التسويق الذكي</title>
-    <meta name="description" content="M24 Marketing - منصة متخصصة في إدارة حملات التسويق بالذكاء الاصطناعي وتحسين محركات البحث (SEO) والإعلانات المدفوعة.">
-    <meta name="keywords" content="التسويق, الذكاء الاصطناعي, SEO, الإعلانات المدفوعة, Google Ads, TikTok Ads">
-    <meta name="author" content="M24 Marketing">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+// إعداد API على الموقع لاستقبال البيانات من الذكاء الصناعي
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const PORT = 3000;
 
-    <!-- الهيدر -->
-    <header>
-        <h1>🚀 مرحبًا بك في <span>M24 Marketing</span></h1>
-        <p>منصة متخصصة في إدارة حملات التسويق بالذكاء الاصطناعي.</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="about.html">من نحن</a></li>
-                <li><a href="services.html">الخدمات</a></li>
-                <li><a href="faq.html">الأسئلة الشائعة</a></li>
-                <li><a href="blog.html">المدونة</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-            </ul>
-        </nav>
-        <button id="toggleDarkMode">🌙 الوضع الليلي</button>
-    </header>
+app.use(express.json());
+app.use(cors());
 
-    <!-- تحديثات الذكاء الاصطناعي -->
-    <section id="ai-content">
-        <h2>🤖 تحديثات الذكاء الاصطناعي</h2>
-        <p>🔄 جاري تحميل تحديثات الذكاء الاصطناعي...</p>
-    </section>
+// نقطة نهاية لاستقبال بيانات الذكاء الصناعي
+app.post('/api/update-data', (req, res) => {
+    const receivedData = req.body;
+    console.log('بيانات مستلمة:', receivedData);
+    
+    // تحديث البيانات في الموقع أو قاعدة البيانات
+    // سيتم إضافة الكود الخاص بالذكاء الصناعي لاحقًا
+    
+    res.json({ message: 'تم استقبال البيانات بنجاح', status: 'success' });
+});
 
-    <!-- الخدمات -->
-    <section id="services">
-        <h2>🔹 خدماتنا</h2>
-        <ul>
-            <li>تحليل السوق بالذكاء الاصطناعي 📊</li>
-            <li>إدارة الحملات الإعلانية 🚀</li>
-            <li>تحسين محركات البحث (SEO) 🔍</li>
-            <li>الإعلانات المدفوعة (Google & TikTok) 🎯</li>
-        </ul>
-        <a href="services.html" class="btn">📢 اكتشف المزيد</a>
-    </section>
-
-    <!-- خطط التسويق -->
-    <section id="pricing">
-        <h2>💰 خطط التسويق لدينا</h2>
-        <div class="pricing-container">
-            <div class="pricing-box">
-                <h3>🚀 الباقة الأساسية</h3>
-                <p>تحليل بيانات السوق + SEO</p>
-                <p><strong>السعر: 500 ريال</strong></p>
-                <a href="https://wa.me/966509478533" class="btn">💬 اطلب الآن</a>
-            </div>
-            <div class="pricing-box">
-                <h3>🔥 الباقة الاحترافية</h3>
-                <p>إدارة الحملات الإعلانية + تحسين الأداء</p>
-                <p><strong>السعر: 1000 ريال</strong></p>
-                <a href="https://wa.me/966509478533" class="btn">💬 اطلب الآن</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- تواصل معنا -->
-    <section id="contact">
-        <h2>📩 تواصل معنا</h2>
-        <p>📧 <a href="mailto:support@m24marketing.com">support@m24marketing.com</a></p>
-        <a href="https://wa.me/966509478533" class="btn-whatsapp">💬 تحدث معنا على واتساب</a>
-    </section>
-
-    <!-- قسم المحادثة مع الذكاء الصناعي -->
-    <section id="chat">
-        <h2>💬 تحدث مع الذكاء الصناعي</h2>
-        <div id="chat-box"></div>
-        <form id="chat-form">
-            <input type="text" id="chat-input" placeholder="اكتب سؤالك هنا..." required>
-            <button type="submit">📩 إرسال</button>
-        </form>
-    </section>
-
-    <!-- زر الرجوع إلى الأعلى -->
-    <button id="scrollTop">⬆</button>
-
-    <!-- الفوتر -->
-    <footer>
-        <p>© 2025 جميع الحقوق محفوظة - M24 Marketing</p>
-    </footer>
-
-    <!-- ربط ملف الجافا سكريبت -->
-    <script src="script.js"></script>
-
-</body>
-</html>
+app.listen(PORT, () => {
+    console.log(`🚀 الخادم يعمل على http://localhost:${PORT}`);
+});
