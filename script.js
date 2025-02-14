@@ -1,13 +1,19 @@
-// تفعيل الوضع الليلي
-document.getElementById("toggleDarkMode").addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
-});
+// تفعيل الوضع الليلي وتخزين الإعداد
+document.addEventListener("DOMContentLoaded", function () {
+    const darkModeToggle = document.getElementById("toggleDarkMode");
+    const body = document.body;
 
-// استرجاع الوضع الليلي المخزن
-if (localStorage.getItem("darkMode") === "true") {
-    document.body.classList.add("dark-mode");
-}
+    // استرجاع حالة الوضع الليلي من localStorage
+    if (localStorage.getItem("darkMode") === "true") {
+        body.classList.add("dark-mode");
+    }
+
+    // تبديل الوضع الليلي عند النقر على الزر
+    darkModeToggle.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", body.classList.contains("dark-mode"));
+    });
+});
 
 // زر الرجوع للأعلى
 window.onscroll = function () {
